@@ -1,0 +1,168 @@
+/* 
+Base Rules
+	A Base rule is applied to an element using an element selector, a descendent selector, or a child selector, along with any pseudoclasses. It doesn’t include any class or ID selectors. It is defining the default styling for how that element should look in all occurrences on the page.
+*/
+
+body {
+    color: $color;
+    @include body-font-regular;
+    @include fontSize(20px);
+    line-height: 1.45;
+    margin: 20px auto;
+    max-width: 600px;
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @include headline-font;
+    line-height: 1;
+}
+
+h1 {
+    @include fontSize(60px);
+    margin-bottom: 84px;
+    text-transform: capitalize;
+}
+
+h1 + p {
+    @include fontSize(30px);
+}
+
+h2 {
+    @include fontSize(40px);
+    margin-top: 50px;
+    margin-bottom: 8px;
+    //border-bottom: 1px solid $color;
+}
+
+h2 + p {
+    margin-top: 0px;
+}
+
+h3 {
+    @include fontSize(34px);
+    margin-top: 34px;
+    margin-bottom: -20px;
+    text-transform: capitalize;
+}
+
+h3 + p {
+    margin-top: 0px;
+}
+
+h4 {
+    @include fontSize(24px);
+    margin-top: 34px;
+    margin-bottom: -24px;
+}
+
+h4 + p {
+    margin-top: 0;
+}
+
+h5 {
+    @include fontSize(18px);
+    margin-top: 28px;
+    margin-bottom: -25px;
+}
+
+h5 + p {
+    margin-top: 0;
+}
+
+h6 {
+    @include fontSize(16px);
+    margin-top: 28px;
+    margin-bottom: -25px;
+}
+
+h6 + p {
+    margin-top: 0;
+}
+
+i, em {
+    @include body-font-italic; 
+}
+
+b, strong {
+    @include body-font-bold;
+}
+
+a {
+    color: $link-color;
+    @include body-font-bold;
+    transition: color 300ms linear;
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+
+a:hover {
+    color: lighten($link-color, 20%);
+    transition: color 300ms linear;
+}
+
+ul {
+    margin: 10px 0 0 22px;
+    padding: 0 0 10px 10px;
+    background-color: lighten($link-color, 36%);
+    list-style-position: inside;
+}
+
+ol {
+    margin: 10px 0 0 40px;
+    padding: 0 0 10px 10px;
+    background-color: lighten($link-color, 36%);
+    list-style-position: inside;
+}
+
+ol li {
+    margin-bottom: 8px;
+}
+
+p + ul, p + ol {
+    margin-top: -10px;
+}
+
+blockquote {
+    background-color: lighten($link-color, 36%);
+    border-left: 10px solid $link-color;
+    @include fontSize(35px);
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+    color: $link-color;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+dt {
+    @include body-font-bold;
+    background-color: $link-color;
+    color: #FFF;
+}
+
+dd {
+    margin: 0 0 10px 0;
+}
+
+footer {
+    border-top: 1px dotted;
+    border-bottom: 1px dotted;
+    padding: 0px;
+    @include fontSize(14px);
+    color: lighten($color, 30%);
+}
+
+img {
+    width: 100%;
+    max-width: 600px;
+    border: 10px solid lighten($link-color, 36%);
+}
